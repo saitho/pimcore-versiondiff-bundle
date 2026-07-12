@@ -1,7 +1,7 @@
 {
   "name": "saitho/pimcore-versiondiff-bundle",
   "require": {
-    "pimcore/pimcore": ">=12.0 <13.0"
+    "pimcore/pimcore": ">=12.0 <13.0 || ^2026.1.6"
   },
   "autoload": {
     "psr-4": {
