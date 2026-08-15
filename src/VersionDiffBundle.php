@@ -1,5 +1,5 @@
 <?php
-namespace Saitho\VersionDiffBundle\src;
+namespace Saitho\VersionDiffBundle;
 
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 
