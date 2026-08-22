@@ -2,10 +2,10 @@
 namespace Saitho\VersionDiffBundle\Utility;
 
 use Carbon\Carbon;
-use Pimcore\Cache;
-use Pimcore\Model\DataObject;
-use Pimcore\Model\DataObject\Concrete;
-use Pimcore\Model\Version;
+use OpenDxp\Cache;
+use OpenDxp\Model\DataObject;
+use OpenDxp\Model\DataObject\Concrete;
+use OpenDxp\Model\Version;
 use Saitho\VersionDiffBundle\Model\DataObjectVersionDiff;
 use Saitho\VersionDiffBundle\Model\VersionResult;
 

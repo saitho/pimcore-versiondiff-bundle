@@ -1,7 +1,7 @@
 <?php
 namespace Saitho\VersionDiffBundle\Utility;
 
-use Pimcore\Model\Version;
+use OpenDxp\Model\Version;
 use Saitho\VersionDiffBundle\Model\VersionResult;
 
 class VersionUtility

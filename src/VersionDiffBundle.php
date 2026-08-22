@@ -1,8 +1,8 @@
 <?php
 namespace Saitho\VersionDiffBundle;
 
-use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
+use OpenDxp\Extension\Bundle\AbstractOpenDxpBundle;
 
-class VersionDiffBundle extends AbstractPimcoreBundle
+class VersionDiffBundle extends AbstractOpenDxpBundle
 {
 }

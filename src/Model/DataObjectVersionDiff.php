@@ -1,7 +1,7 @@
 <?php
 namespace Saitho\VersionDiffBundle\Model;
 
-use Pimcore\Model\DataObject\Concrete;
+use OpenDxp\Model\DataObject\Concrete;
 
 /**
  * @extends VersionDiff<Concrete>

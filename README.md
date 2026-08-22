@@ -1,13 +1,13 @@
-# Pimcore VersionDiffBundle
+# OpenDxp VersionDiffBundle
 
-A small Pimcore bundle that compares Pimcore `Version` snapshots and builds structured diffs for DataObjects.
+A small OpenDxp bundle that compares OpenDxp `Version` snapshots and builds structured diffs for DataObjects.
 
 **Note:** This README file was generated using AI. The code was done by a human.
 
 ## Requirements
 
 - PHP 8.3+
-- Pimcore `>=12.0 <13.0 || ^2026.1.6`
+- OpenDxp `>=12.0 <13.0 || ^2026.1.6`
 
 ## Installation
 
@@ -15,26 +15,26 @@ A small Pimcore bundle that compares Pimcore `Version` snapshots and builds stru
 composer require saitho/pimcore-versiondiff-bundle
 ```
 
-The bundle class can be enabled in `config/bundles.php` or via the Pimcore extension manager, but this is **optional** — the utility classes are usable as soon as Composer autoloads the package.
+The bundle class can be enabled in `config/bundles.php` or via the OpenDxp extension manager, but this is **optional** — the utility classes are usable as soon as Composer autoloads the package.
 
 ## What it does
 
 The bundle provides utilities to:
 
-- Load Pimcore versions by element ID / ctype.
+- Load OpenDxp versions by element ID / ctype.
 - Find the previous version of a given `Version`.
 - Build recursive diffs between two arbitrary objects or arrays.
-- Build Pimcore DataObject-aware diffs that ignore version metadata and normalize object relations.
+- Build OpenDxp DataObject-aware diffs that ignore version metadata and normalize object relations.
 - Group version diffs by date and cache the result.
 
 ## Main components
 
 | Class | Purpose |
 |-------|---------|
-| `VersionDiffBundle` | Empty Pimcore bundle registration class. |
-| `Utility\VersionUtility` | Fetch versions and resolve the previous version of a `Pimcore\Model\Version`. |
+| `VersionDiffBundle` | Empty OpenDxp bundle registration class. |
+| `Utility\VersionUtility` | Fetch versions and resolve the previous version of a `OpenDxp\Model\Version`. |
 | `Utility\DiffUtility` | Recursively diff arrays / objects into an array of changed values. |
-| `Utility\DataObjectUtility` | Pimcore DataObject-specific diff helpers. |
+| `Utility\DataObjectUtility` | OpenDxp DataObject-specific diff helpers. |
 | `Model\VersionResult` | Wrapper around a list of `Version` instances with grouping helpers. |
 | `Model\VersionDiff` | Generic diff result: old data, new data, diff array. |
 | `Model\DataObjectVersionDiff` | VersionDiff for `DataObject\Concrete` with `wasPublished()` / `wasUnpublished()` helpers. |
@@ -44,7 +44,7 @@ The bundle provides utilities to:
 ### Diff a DataObject against its previous version
 
 ```php
-use Pimcore\Model\Version;
+use OpenDxp\Model\Version;
 use Saitho\VersionDiffBundle\Utility\DataObjectUtility;
 
 /** @var Version $version */
@@ -101,7 +101,7 @@ Nested objects and arrays are diffed recursively. Added keys show `null` as the 
 
 ## DataObject-specific behavior
 
-`DataObjectUtility::getDiff()` performs a few Pimcore-specific normalizations before diffing:
+`DataObjectUtility::getDiff()` performs a few OpenDxp-specific normalizations before diffing:
 
 - Ignores internal version fields: `__dataVersionTimestamp`, `modificationDate`, `versionCount`.
 - Ignores Carbon's `constructedObjectId`.
@@ -109,8 +109,8 @@ Nested objects and arrays are diffed recursively. Added keys show `null` as the 
 
 ## Caching
 
-`DataObjectUtility::getDiffGroupedByDate()` writes results to Pimcore's `Cache` under the tag `versionDiff`. Pass additional cache tags if you want to invalidate the cache together with other application data.
+`DataObjectUtility::getDiffGroupedByDate()` writes results to OpenDxp's `Cache` under the tag `versionDiff`. Pass additional cache tags if you want to invalidate the cache together with other application data.
 
 ## License
 
-This bundle is licensed under the Pimcore Open Core License (POCL). See [LICENSE.md](LICENSE.md).
+This bundle is licensed under the OpenDxp Open Core License (POCL). See [LICENSE.md](LICENSE.md).
